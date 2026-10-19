@@ -18,6 +18,88 @@
   </header>
 
   <main class="container">
+
+    <!-- Ringkasan keuangan W5 -->
+    <section class="panel">
+      <h2>Ringkasan Keuangan</h2>
+      <p class="description">Pantau kondisi keuangan rumah tangga.</p>
+
+      <div class="summary-grid">
+        <article class="summary-card">
+          <p>Total Pemasukan</p>
+          <h3 id="totalPemasukan">Rp0</h3>
+        </article>
+
+        <article class="summary-card">
+          <p>Total Pengeluaran</p>
+          <h3 id="totalPengeluaran">Rp0</h3>
+        </article>
+
+        <article class="summary-card">
+          <p>Saldo Akhir</p>
+          <h3 id="saldoAkhir">Rp0</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- Amplop anggaran persona -->
+    <section class="panel">
+      <h2>Amplop Anggaran Rumah Tangga</h2>
+      <p class="description">
+        Atur batas pengeluaran untuk setiap kebutuhan keluarga.
+      </p>
+
+      <div class="envelope-grid">
+        <article class="envelope-card">
+          <h3>Belanja Dapur</h3>
+          <label for="budgetDapur">Anggaran (Rp)</label>
+          <input
+            type="number"
+            id="budgetDapur"
+            min="0"
+            step="1"
+            placeholder="Contoh: 1000000"
+          >
+          <p>Terpakai: <strong id="usedDapur">Rp0</strong></p>
+          <p>Sisa: <strong id="remainingDapur">Rp0</strong></p>
+        </article>
+
+        <article class="envelope-card">
+          <h3>Transportasi</h3>
+          <label for="budgetTransportasi">Anggaran (Rp)</label>
+          <input
+            type="number"
+            id="budgetTransportasi"
+            min="0"
+            step="1"
+            placeholder="Contoh: 300000"
+          >
+          <p>Terpakai: <strong id="usedTransportasi">Rp0</strong></p>
+          <p>Sisa: <strong id="remainingTransportasi">Rp0</strong></p>
+        </article>
+
+        <article class="envelope-card">
+          <h3>Pendidikan</h3>
+          <label for="budgetPendidikan">Anggaran (Rp)</label>
+          <input
+            type="number"
+            id="budgetPendidikan"
+            min="0"
+            step="1"
+            placeholder="Contoh: 500000"
+          >
+          <p>Terpakai: <strong id="usedPendidikan">Rp0</strong></p>
+          <p>Sisa: <strong id="remainingPendidikan">Rp0</strong></p>
+        </article>
+      </div>
+
+      <button type="button" id="saveBudgetsButton" class="primary-button">
+        Simpan Anggaran
+      </button>
+      <p id="budgetMessage" class="message" role="status"></p>
+    </section>
+
+    <!-- Form transaksi -->
     <section class="panel">
       <h2>Tambah Transaksi</h2>
       <p class="description">Masukkan detail transaksi dengan benar.</p>
@@ -71,6 +153,7 @@
       </form>
     </section>
 
+    <!-- Daftar transaksi -->
     <section class="panel">
       <div class="section-heading">
         <div>
@@ -85,6 +168,7 @@
         Belum ada transaksi. Yuk, catat transaksi pertamamu!
       </p>
     </section>
+
   </main>
 
   <footer>

@@ -1,0 +1,401 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #f7c5d2;
+  --pink-dark: #bd5878;
+  --pink-light: #fff0f4;
+  --cream: #fffaf6;
+  --white: #ffffff;
+  --text: #44343a;
+  --muted: #8c7a81;
+  --border: #f0e2e7;
+  --green: #27805c;
+  --red: #c64f5d;
+  --shadow: 0 10px 30px rgba(117, 67, 85, 0.07);
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top right, #fce8ef 0, transparent 38%),
+    var(--cream);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  padding: 42px 24px 38px;
+  background: linear-gradient(135deg, #f9dce5, #fff0f4);
+  border-bottom: 1px solid var(--border);
+}
+
+.header > div,
+.container {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--pink-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 43px);
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: #765f68;
+  font-size: 16px;
+}
+
+.container {
+  padding: 30px 22px;
+}
+
+.panel {
+  margin-bottom: 24px;
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -0.4px;
+}
+
+.description {
+  margin: 6px 0 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Ringkasan keuangan */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.summary-card {
+  min-width: 0;
+  padding: 20px;
+  background: linear-gradient(145deg, #fff5f8, #fffafd);
+  border: 1px solid #f6e3ea;
+  border-radius: 16px;
+}
+
+.summary-card:nth-child(2) {
+  background: #fff8f3;
+  border-color: #f5e8de;
+}
+
+.summary-card:nth-child(3) {
+  background: #f3faf5;
+  border-color: #dfefe4;
+}
+
+.summary-card p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.summary-card h3 {
+  margin: 0;
+  font-size: clamp(17px, 2vw, 23px);
+  overflow-wrap: anywhere;
+}
+
+.income {
+  color: var(--green);
+}
+
+.expense {
+  color: var(--red);
+}
+
+/* Amplop anggaran */
+.envelope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.envelope-card {
+  min-width: 0;
+  padding: 18px;
+  background: #fffafc;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.envelope-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(117, 67, 85, 0.08);
+}
+
+.envelope-card h3 {
+  margin: 0 0 14px;
+  font-size: 16px;
+}
+
+.envelope-card label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.envelope-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.envelope-card strong {
+  color: var(--text);
+}
+
+.envelope-card input {
+  width: 100%;
+}
+
+/* Form */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  color: var(--text);
+  background: #fffdfd;
+  border: 1px solid #e9dce1;
+  border-radius: 11px;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--pink-dark);
+  box-shadow: 0 0 0 3px rgba(189, 88, 120, 0.12);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Tombol */
+button {
+  min-height: 44px;
+  padding: 10px 17px;
+  border: none;
+  border-radius: 11px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button {
+  margin-top: 20px;
+  color: white;
+  background: var(--pink-dark);
+  box-shadow: 0 5px 12px rgba(189, 88, 120, 0.16);
+}
+
+.primary-button:hover {
+  background: #a74667;
+}
+
+/* Daftar transaksi */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.count {
+  padding: 5px 11px;
+  color: var(--pink-dark);
+  background: var(--pink-light);
+  border: 1px solid #f4dbe4;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.transaction-list {
+  display: grid;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+  background: #fffdfd;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.transaction-info {
+  min-width: 0;
+}
+
+.transaction-info h3 {
+  margin: 0;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.transaction-info p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.transaction-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.amount {
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.delete-button {
+  min-height: 35px;
+  padding: 7px 11px;
+  color: var(--red);
+  background: #fff0f1;
+  font-size: 12px;
+}
+
+.delete-button:hover {
+  background: #ffdee2;
+}
+
+.empty-message {
+  padding: 22px 10px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+}
+
+.message {
+  margin: 12px 0 0;
+  color: var(--pink-dark);
+  font-size: 13px;
+}
+
+.message:empty {
+  display: none;
+}
+
+footer {
+  padding: 12px 20px 30px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Tampilan tablet dan HP */
+@media (max-width: 700px) {
+  .summary-grid,
+  .envelope-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 32px 20px;
+  }
+
+  .container {
+    padding: 20px 14px;
+  }
+
+  .panel {
+    padding: 21px 17px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .transaction-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .transaction-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .section-heading {
+    flex-direction: column;
+  }
+
+  .summary-card {
+    padding: 16px;
+  }
+}
