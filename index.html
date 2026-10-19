@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruang Anggaran</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <p class="eyebrow">KEUANGAN RUMAH TANGGA</p>
+      <h1>Ruang Anggaran</h1>
+      <p class="subtitle">Catat pemasukan dan pengeluaran rumahmu.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Tambah Transaksi</h2>
+      <p class="description">Masukkan detail transaksi dengan benar.</p>
+
+      <form id="transactionForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="tanggal">Tanggal</label>
+            <input type="date" id="tanggal" required>
+          </div>
+
+          <div class="field">
+            <label for="jenis">Jenis transaksi</label>
+            <select id="jenis" required>
+              <option value="pemasukan">Pemasukan</option>
+              <option value="pengeluaran">Pengeluaran</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="kategori">Kategori</label>
+            <select id="kategori" required></select>
+          </div>
+
+          <div class="field">
+            <label for="nominal">Nominal (Rp)</label>
+            <input
+              type="number"
+              id="nominal"
+              min="0.01"
+              step="any"
+              placeholder="Contoh: 50000"
+              required
+            >
+          </div>
+
+          <div class="field full-width">
+            <label for="catatan">Catatan (opsional)</label>
+            <input
+              type="text"
+              id="catatan"
+              placeholder="Contoh: Belanja sayur"
+            >
+          </div>
+        </div>
+
+        <button type="submit" class="primary-button">
+          + Simpan Transaksi
+        </button>
+        <p id="formMessage" class="message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Daftar Transaksi</h2>
+          <p class="description">Transaksi terbaru ditampilkan lebih dulu.</p>
+        </div>
+        <span id="transactionCount" class="count">0 transaksi</span>
+      </div>
+
+      <div id="transactionList" class="transaction-list"></div>
+      <p id="emptyMessage" class="empty-message">
+        Belum ada transaksi. Yuk, catat transaksi pertamamu!
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Ruang Anggaran · Catatan keuangan rumah tangga</p>
+  </footer>
+</body>
+</html>
